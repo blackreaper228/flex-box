@@ -1,0 +1,185 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'TT Firs Neue', sans-serif;
+}
+
+@import "tailwindcss";
+
+:root{
+  --color-primary: #000;
+  --senkino-color: #9CA8AF;
+  --balashiha-color: #4F98A3;
+  --kuvekino-color: #BDB7AA;
+  --parametr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body{
+  width: 100%;
+  height: fit-content;
+}
+
+#scale-wrapper{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#scale-container{
+  width: 1440px; /* design width */
+  transform-origin: top left;
+  margin: 0 auto; /* center when scale = 1 */
+}
+
+#scale-content{
+  width: 100%;
+}
+
+.title{
+  font-size: 57px;
+  line-height: 55px;
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.number{
+  font-size: 70px;
+  line-height: 42px;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.number_text{
+  text-align: end;
+  font-size: 13px;
+  line-height: 14px;
+  color: var(--color-primary);
+  letter-spacing: 0.06em;
+}
+.text{
+  font-size: 28px;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  font-weight: 400;
+}
+.row_text{
+  font-size: 13px;
+  line-height: 17px;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.feature{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  &:is(.first){
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 100%), url('card/Card_01.png');
+  }
+  &:is(.second){
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 100%), url('card/Card_02.png');
+  }
+  &:is(.third){
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 100%), url('card/Card_03.png');
+  }
+  &:is(.fourth){
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 100%), url('card/Card_04.png');
+  }
+  &:is(.fifth){
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 100%), url('card/Card_05.png');
+  }
+  &:is(.sixth){
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,1) 100%), url('card/Card_06.png');
+  }
+}
+.project{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  overflow: hidden;
+  cursor: pointer;
+  .text{
+    @apply text-white;
+  }
+  &:is(.kuvekino){
+    background-color: var(--kuvekino-color);
+    background-image: url('https://parametr.space/media/cache/project_image_md/uploads/7/kuvekino_bb_2563x1851_1743088037.jpg');
+    background-size: cover;
+    background-position: center;
+    .project_color{
+      background-color: var(--kuvekino-color);
+    }
+  }
+  &:is(.senkino){
+    background-color: var(--senkino-color);
+    background-image: url('https://parametr.space/media/cache/project_image_md/uploads/5/li_8_1753797826.jpg');
+    background-size: cover;
+    background-position: center;
+    .project_color{
+      background-color: var(--senkino-color);
+    }
+  }
+  &:is(.balashiha){
+    background-color: var(--balashiha-color);
+    background-image: url('https://parametr.space/media/cache/project_image_md/uploads/8/balashiha_li_2563%D1%851851_1731672295.jpg');
+    background-size: cover;
+    background-position: center;
+    .project_color{
+      background-color: var(--balashiha-color);
+    }
+  }
+}
+.main-slider{
+  background-image: url('/MainSliderBG.svg');
+  @media screen and (max-width: 768px) {
+    background-image: url('/MainSliderMobileBG.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+.button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 40px;
+  gap: 15px;
+  border-radius: 1000px;
+  padding: 0 20px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  &:is(.primary){
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+  &:is(.secondary){
+    border: 1px solid var(--color-primary);
+    background-color: transparent;
+    color: var(--color-primary);
+  }
+}
+@media (max-width: 768px) {
+  .title{
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .number{
+    font-size: 42px;
+    line-height: 42px;
+  }
+  .text{
+    font-size: 19px;
+    line-height: 20px;
+  }
+  .number_text{
+    font-size: 14px;
+    line-height: 15px;
+    text-align: start;
+  }
+}
