@@ -37,7 +37,7 @@ body {
 }
 
 .flex-height {
-  height: 55vh;
+  height: 65vh;
 }
 
 @media (max-width: 768px) {
@@ -94,7 +94,7 @@ body {
         rgba(0, 0, 0, 0) 40%,
         rgba(0, 0, 0, 1) 100%
       ),
-      url("/card/Card_01.jpg");
+      url("/card/Card_04.jpg");
   }
   &:is(.second) {
     background-image: linear-gradient(
@@ -102,7 +102,7 @@ body {
         rgba(0, 0, 0, 0) 40%,
         rgba(0, 0, 0, 1) 100%
       ),
-      url("/card/Card_02.png");
+      url("/card/Card_01.jpg");
   }
   &:is(.third) {
     background-image: linear-gradient(
@@ -118,7 +118,7 @@ body {
         rgba(0, 0, 0, 0) 40%,
         rgba(0, 0, 0, 1) 100%
       ),
-      url("/card/Card_04.jpg");
+      url("/card/Card_02.png");
   }
   &:is(.fifth) {
     background-image: linear-gradient(
@@ -157,7 +157,7 @@ body {
   }
   &:is(.senkino) {
     background-color: var(--senkino-color);
-    background-image: url("https://parametr.space/media/cache/project_image_md/uploads/5/li_8_1753797826.jpg");
+    background-image: url("/card_senkino.jpg");
     background-size: cover;
     background-position: center;
     .project_color {
