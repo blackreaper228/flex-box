@@ -11,6 +11,10 @@
   --senkino-color: #9ca8af;
   --balashiha-color: #4f98a3;
   --kuvekino-color: #bdb7aa;
+  --sokolovo-color: #A65B61;
+  --tokarevo-color: #8A7F8E;
+  --butovo-color: #949E8C;
+
   --parametr-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -148,7 +152,7 @@ body {
   }
   &:is(.kuvekino) {
     background-color: var(--kuvekino-color);
-    background-image: url("https://parametr.space/media/cache/project_image_md/uploads/7/kuvekino_bb_2563x1851_1743088037.jpg");
+    background-image: url("/card/kuvekino.jpg");
     background-size: cover;
     background-position: center;
     .project_color {
@@ -157,7 +161,7 @@ body {
   }
   &:is(.senkino) {
     background-color: var(--senkino-color);
-    background-image: url("/card_senkino.jpg");
+    background-image: url("/card/senkino.jpg");
     background-size: cover;
     background-position: center;
     .project_color {
@@ -166,11 +170,38 @@ body {
   }
   &:is(.balashiha) {
     background-color: var(--balashiha-color);
-    background-image: url("https://parametr.space/media/cache/project_image_md/uploads/8/balashiha_li_2563%D1%851851_1731672295.jpg");
+    background-image: url("/card/balashiha.jpg");
     background-size: cover;
     background-position: center;
     .project_color {
       background-color: var(--balashiha-color);
+    }
+  }
+  &:is(.sokolovo) {
+    background-color: var(--sokolovo-color);
+    background-image: url("/card/sokolovo.jpg");
+    background-size: cover;
+    background-position: center;
+    .project_color {
+      background-color: var(--sokolovo-color);
+    }
+  }
+  &:is(.tokarevo) {
+    background-color: var(--tokarevo-color);
+    background-image: url("/card/tokarevo.jpg");
+    background-size: cover;
+    background-position: center;
+    .project_color {
+      background-color: var(--tokarevo-color);
+    }
+  }
+  &:is(.butovo) {
+    background-color: var(--butovo-color);
+    background-image: url("/card/butovo.jpg");
+    background-size: cover;
+    background-position: center;
+    .project_color {
+      background-color: var(--butovo-color);
     }
   }
 }
@@ -227,4 +258,8 @@ body {
     line-height: 15px;
     text-align: start;
   }
+}
+
+.text_right{
+  text-align: right;
 }
