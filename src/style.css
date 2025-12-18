@@ -11,9 +11,9 @@
   --senkino-color: #9ca8af;
   --balashiha-color: #4f98a3;
   --kuvekino-color: #bdb7aa;
-  --sokolovo-color: #A65B61;
-  --tokarevo-color: #8A7F8E;
-  --butovo-color: #949E8C;
+  --sokolovo-color: #a65b61;
+  --tokarevo-color: #8a7f8e;
+  --butovo-color: #949e8c;
 
   --parametr-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -23,11 +23,11 @@ body {
   height: fit-content;
 }
 
-p{
-  font-weight: 500;  
+p {
+  font-weight: 500;
 }
 
-h3{
+h3 {
   font-weight: 500;
 }
 
@@ -150,6 +150,7 @@ h3{
       url("/card/Card_06.jpg");
   }
 }
+
 .project {
   display: flex;
   flex-direction: column;
@@ -267,17 +268,555 @@ h3{
     line-height: 15px;
     text-align: start;
   }
+
+  .feature {
+    width: 90vw;
+  }
 }
 
-.text_right{
+/* Полностью отключить hover эффекты на мобильных устройствах */
+@media (max-width: 768px) {
+  /* Полностью отключаем все hover эффекты */
+  .feature.group:hover > div {
+    transform: inherit !important;
+  }
+
+  .feature.group:hover p {
+    opacity: inherit !important;
+  }
+
+  /* Добавить активное состояние по клику - скрываем карточку */
+  .feature.group.active > div[class*="-translate-y-"] {
+    transform: translateY(-100px) !important;
+  }
+
+  .feature.group.active p[class*="opacity-0"] {
+    opacity: 1 !important; /* Текст становится видимым при активном состоянии */
+  }
+
+  .-translate-y-\[-100px\] {
+    --tw-translate-y: calc(-100px * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+}
+
+/* Дополнительная защита через класс body - полностью отключаем hover эффекты */
+body.mobile-no-hover .feature.group:hover > div {
+  transform: inherit !important;
+}
+
+body.mobile-no-hover .feature.group:hover p {
+  opacity: inherit !important;
+}
+
+body.mobile-no-hover .feature.group.active > div[class*="-translate-y-"] {
+  transform: translateY(-100px) !important;
+}
+
+body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
+  opacity: 1 !important; /* Текст становится видимым при активном состоянии */
+}
+
+.text_right {
   text-align: right;
 }
 
-.pic-ungrag{
+.pic-ungrag {
   user-drag: none;
   -webkit-user-drag: none;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+.custom-form__input {
+  width: 100%;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  opacity: 100;
+
+  &::placeholder {
+    color: var(--color-primary);
+  }
+}
+
+.custom-form__input:focus {
+  text-transform: none;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  color: var(--color-primary);
+
+  &::placeholder {
+    opacity: 0;
+  }
+}
+
+.custom-form__checkbox-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #181818;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.custom-form__checkbox-input:checked ~ .custom-form__checkbox-icon {
+  border-color: #181818;
+}
+
+.custom-form__checkbox-input:checked ~ .custom-form__checkbox-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid #181818;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.custom-form__checkbox-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.custom-form__checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.O_Form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding: 180px; */
+}
+
+.W_FormPart {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  gap: 60px;
+}
+
+.U_Uppercase {
+  text-transform: uppercase;
+}
+
+.A_Subtitle {
+  font-size: 28px;
+  line-height: 130%;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.custom-form__field {
+  margin-bottom: 60px;
+}
+
+.O_Offers {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: fit-content;
+  padding: 40px 40px 0px 40px;
+  max-width: 100%;
+  align-items: center;
+}
+
+.W_Offers {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+
+.W_Offer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 48px 0 48px 0;
+  justify-content: space-between;
+}
+
+.W_OfferLeft {
+  height: 622px;
+  padding: 24px;
+  padding-left: calc((100vw - 2560px) / 2);
+  border-bottom: 1px solid #18181815;
+  border-top: 1px solid #18181815;
+}
+
+.U_BestOffer {
+  height: 622px;
+  background-color: #181818;
+  color: #fff;
+  padding: 24px;
+}
+
+.W_OfferRight {
+  height: 622px;
+  padding: 24px;
+  padding-right: calc((100vw - 2560px) / 2);
+  border-bottom: 1px solid #18181815;
+  border-top: 1px solid #18181815;
+}
+
+.A_OfferTitle {
+  font-size: 28px;
+  min-height: 86px;
+  line-height: 1;
+}
+
+.A_OfferMain {
+  font-size: 28px;
+  color: #373936;
+  line-height: 1;
+}
+
+.A_OfferGray {
+  color: #373936;
+  opacity: 0.6;
+  font-size: 16px;
+}
+
+.U_BestOffer {
+  .A_OfferMain {
+    color: #fff;
+  }
+}
+.U_BestOffer {
+  .A_OfferGray {
+    color: #fff;
+  }
+}
+
+.W_OfferPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.A_OfferButton {
+  width: 100%;
+  height: 47px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #181818;
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.U_BestOffer {
+  .A_OfferButton {
+    color: #181818 !important;
+  }
+}
+
+.Q_OfferDiv {
+  width: 100%;
+  height: 1px;
+  background-color: #d8d8d8;
+}
+
+.U_BestOffer {
+  .Q_OfferDiv {
+    background-color: #ffffff15;
+  }
+}
+
+.W_MobileNavigation {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .W_Offers {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 1023px) {
+  .W_Offers {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.4s ease;
+  }
+
+  .W_Offers {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .W_OfferLeft {
+    padding-left: 24px;
+  }
+
+  .W_Offer.U_BestOffer {
+    order: -1;
+  }
+
+  .W_Offer.W_OfferLeft {
+    order: 1;
+  }
+
+  .U_BestOffer {
+  }
+
+  .O_Offers {
+    padding: 40px 0px 0px 0px;
+  }
+
+  .W_Offer {
+    min-width: 100%;
+  }
+
+  .U_Floating {
+    padding: 0 24px;
+    padding-right: 100px;
+  }
+
+  .W_OfferRight {
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .W_OfferLeft {
+    height: 612px;
+    padding-left: calc((100vw - 944px) / 2);
+  }
+}
+
+@media (max-width: 1439px) {
+  .U_BestOffer {
+    height: 612px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .W_Offer.W_OfferRight {
+    order: 2;
+  }
+}
+
+@media (max-width: 1439px) {
+  .W_OfferRight {
+    height: 612px;
+    padding-right: calc((100vw - 944px) / 2);
+  }
+}
+
+@media (max-width: 1023px) {
+  .W_MobileNavigation {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .W_MobileNavigation {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1023px) {
+  .W_Mobilecounter {
+    display: flex;
+    flex-direction: row;
+    gap: 6.86px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .W_Switchers {
+    width: fit-content;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1023px) {
+  .U_LeftOffer {
+    width: 35px;
+    max-width: 35px;
+    height: 35px;
+    max-height: 35px;
+    border-radius: 100px;
+    border: 1px solid #131313;
+  }
+
+  .U_RightOffer {
+    width: 35px;
+    max-width: 35px;
+    height: 35px;
+    max-height: 35px;
+    border-radius: 100px;
+    border: 1px solid #131313;
+  }
+}
+
+@media (max-width: 1023px) {
+  .A_Mobilecount {
+    font-size: 44px;
+    color: #d8d8d8;
+  }
+
+  .U_Slash {
+    font-weight: 100;
+  }
+  .U_Dynamic {
+    color: #131313;
+  }
+}
+
+@media all and (max-width: 1023px) {
+  .W_RowHistoryTitleButton {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 24px;
+    padding-left: 24px !important;
+  }
+  .M_HistoryItem {
+    padding: 24px;
+  }
+
+  .W_OfferLeft {
+    padding-left: 24px;
+  }
+  .U_Floating {
+    padding: 0 24px;
+  }
+  .W_OfferRight {
+    padding-right: 24px;
+  }
+  .W_MobileNavigation {
+    padding: 0 24px;
+  }
+  .U_BestOffer {
+  }
+  .W_Offers {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.4s ease; /* плавный сдвиг */
+  }
+
+  .map {
+    /*height: 720px;*/
+    height: 400px;
+  }
+
+  .map_desktop-hide {
+    display: block;
+  }
+
+  .map_mobile-show {
+    display: none;
+  }
+
+  .O_Offers {
+    overflow-x: hidden;
+  }
+  .W_Offers {
+    transition: all 0.3s ease-in-out;
+  }
+  .Q_OfferDivHorizontal {
+    display: none;
+  }
+  .W_Offer {
+    min-width: 100%;
+  }
+  .W_MobileNavigation {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: -20px;
+  }
+  .U_LeftOffer {
+    width: 35px;
+    max-width: 35px;
+    height: 35px;
+    max-height: 35px;
+    border-radius: 100px;
+    border: 1px solid #131313;
+  }
+  .W_Switchers {
+    width: fit-content;
+  }
+  .A_Mobilecount {
+    font-size: 44px;
+    color: #d8d8d8;
+  }
+  .U_Slash {
+    font-weight: 100;
+  }
+  .U_Dynamic {
+    color: #131313;
+  }
+  .W_Mobilecounter {
+    display: flex;
+    flex-direction: row;
+    gap: 6.86px;
+  }
+  .U_RightOffer {
+    width: 35px;
+    max-width: 35px;
+    height: 35px;
+    max-height: 35px;
+    border-radius: 100px;
+    border: 1px solid #131313;
+  }
+}
+
+.growing {
+  height: 100px;
+  transition: 0.3s ease-in-out;
+}
+
+.project:hover {
+  .growing {
+    height: 350px;
+    transition: 0.3s ease-in-out;
+  }
+  .growing.kuvekino {
+    background-color: var(--kuvekino-color);
+  }
+  .growing.balashiha {
+    background-color: var(--balashiha-color);
+  }
+  .growing.senkino {
+    background-color: var(--senkino-color);
+  }
+  .growing.sokolovo {
+    background-color: var(--sokolovo-color);
+  }
+  .growing.tokarevo {
+    background-color: var(--tokarevo-color);
+  }
+  .growing.butovo {
+    background-color: var(--butovo-color);
+  }
 }
