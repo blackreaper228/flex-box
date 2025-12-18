@@ -60,7 +60,7 @@ body {
 }
 .number {
   font-size: 70px;
-  line-height: 42px;
+  line-height: 70px;
   letter-spacing: 0.02em;
   color: var(--color-primary);
   text-transform: uppercase;
