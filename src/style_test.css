@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "TT Firs Neue", sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+.block {
+  color: white;
+  padding: 60px;
+
+  width: 100%;
+  height: 500px;
+  max-width: 1500px;
+  border: 5px solid transparent;
+  border-radius: 18px;
+  background: linear-gradient(#000, #000 0) padding-box,
+    linear-gradient(
+        to right,
+        #28c9ff 0%,
+        #7ee502 20%,
+        #fe5502 40%,
+        #e21190 100%
+      )
+      border-box;
+}

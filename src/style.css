@@ -152,6 +152,7 @@ h3 {
 }
 
 .project {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -819,4 +820,29 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
   .growing.butovo {
     background-color: var(--butovo-color);
   }
+}
+
+.tag {
+  width: fit-content;
+  height: 40px;
+  border-radius: 1000px;
+
+  border: 1px solid white;
+
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.tagWrap {
+  max-width: 300px;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
