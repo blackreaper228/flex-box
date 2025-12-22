@@ -846,3 +846,9 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
   gap: 12px;
   flex-wrap: wrap;
 }
+
+.projectTab {
+  width: 194px;
+  height: 36px;
+  background-color: red;
+}
