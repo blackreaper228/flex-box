@@ -16,6 +16,9 @@
   --butovo-color: #949e8c;
 
   --parametr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --secondary-light: #f7f7f7;
+  --grey: #d6d6d6;
 }
 
 body {
@@ -151,6 +154,10 @@ h3 {
   }
 }
 
+.project_color {
+  transition: background-color 0.3s;
+}
+
 .project {
   position: relative;
   display: flex;
@@ -231,6 +238,7 @@ h3 {
 }
 .button {
   display: flex;
+  flex-shrink: 0;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -249,6 +257,11 @@ h3 {
     border: 1px solid var(--color-primary);
     background-color: transparent;
     color: var(--color-primary);
+  }
+
+  &:is(.secondary.finance) {
+    padding: 0px 36px;
+    height: 48px;
   }
 }
 @media (max-width: 768px) {
@@ -797,11 +810,27 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
   transition: 0.3s ease-in-out;
 }
 
+/* .project:hover { */
+
+.project {
+  p.data {
+    /* display: none; */
+    opacity: 0;
+  }
+
+  .content {
+    position: absolute;
+  }
+}
+
 .project:hover {
   .growing {
-    height: 350px;
+    position: relative;
+    height: 382px;
     transition: 0.3s ease-in-out;
+    opacity: 1;
   }
+
   .growing.kuvekino {
     background-color: var(--kuvekino-color);
   }
@@ -819,6 +848,45 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
   }
   .growing.butovo {
     background-color: var(--butovo-color);
+  }
+
+  .plus {
+    background-color: white;
+    transition: background-color 0.3s;
+  }
+
+  p.data {
+    display: flex;
+    animation: goingUp 0.5s forwards;
+    animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    animation-delay: 0.1s;
+
+    &:nth-child(1) {
+      animation-delay: 0.15s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.05s;
+    }
+  }
+
+  .content {
+    transition: 0.3s;
+    /* animation: goingUp 0.3s ease-in-out forwards;
+    animation-delay: 0.2s; */
+  }
+}
+
+@keyframes goingUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 
@@ -851,4 +919,77 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
   width: 194px;
   height: 36px;
   background-color: red;
+}
+
+.financeProgram {
+  position: relative;
+  align-items: flex-start;
+}
+
+.financeProgram.prior {
+  background-color: var(--secondary-light);
+}
+
+.divGrey {
+  width: 100%;
+  height: 1px;
+  background-color: var(--grey);
+}
+
+.openBtn {
+  width: 42px;
+  aspect-ratio: 1;
+  background-image: url("/icons/chevron-up.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .openBtn {
+    width: 26px;
+    height: 18px;
+  }
+}
+
+.openBtnWrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.A_OfferNewLogo {
+  width: auto;
+  max-width: none;
+  height: 50px;
+  max-height: 50px;
+}
+@media (max-width: 1439px) {
+  .A_OfferNewLogo {
+    width: auto;
+    max-width: none;
+    height: 40px;
+    max-height: 40px;
+  }
+}
+@media (max-width: 1439px) {
+  .A_OfferNewLogo {
+    width: 57.43px;
+    max-width: 57.43px;
+    height: 50px;
+    max-height: 50px;
+  }
+}
+
+.accordionCard {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+}
+
+.accordionCard.is-open {
+  opacity: 1;
 }
