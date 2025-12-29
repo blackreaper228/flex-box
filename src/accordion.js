@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const accordions = [
-    document.getElementById("firstAccordion"),
     document.getElementById("secondAccordion"),
     document.getElementById("lastAccordion"),
   ];
