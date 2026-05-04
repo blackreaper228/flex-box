@@ -10,18 +10,14 @@
 
 @font-face {
   font-family: TT Firs Neue;
-  src:
-    url(/parametr-header/TTFirsNeue-Regular.ttf) format('truetype'),
-    url(https://static.tildacdn.com/tild3761-6331-4234-b039-346630363437/TTFirsNeue-Regular.woff);
+  src: url(https://static.tildacdn.com/tild3761-6331-4234-b039-346630363437/TTFirsNeue-Regular.woff);
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: TT Firs Neue;
-  src:
-    url(/parametr-header/TTFirsNeue-Medium.ttf) format('truetype'),
-    url(https://static.tildacdn.com/tild3038-3936-4734-a664-643863393164/TTFirsNeue-Medium.woff);
+  src: url(https://static.tildacdn.com/tild3038-3936-4734-a664-643863393164/TTFirsNeue-Medium.woff);
   font-weight: 500;
   font-style: normal;
 }
@@ -884,21 +880,21 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
 
 .tag {
   width: fit-content;
-  height: 40px;
+  height: 25px;
   border-radius: 1000px;
 
   border: 1px solid white;
 
   white-space: nowrap;
   text-transform: uppercase;
-  font-size: 16px;
-  padding: 0 20px;
+  font-size: 11px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
 }
 
 .tagWrap {
-  max-width: 300px;
+  max-width: 332px;
   position: absolute;
   left: 40px;
   top: 40px;

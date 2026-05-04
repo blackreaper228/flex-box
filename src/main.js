@@ -1,9 +1,7 @@
 import './style.css';
-import './js/slider.js';
 import './js/accordion.js';
 import './js/textSlider.js';
-import './js/customScroll.js'; 
-
+import './js/customScroll.js';
 
 const DESIGN_WIDTH = 1440;
 const MIN_SCALE_BREAKPOINT = 769; // start scaling at >= 768px viewport width
