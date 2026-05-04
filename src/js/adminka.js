@@ -7,6 +7,8 @@ const KUVEKINO_GID = 1783652729; // <-- change to your real gid if needed
 const KUVEKINO_SHEET_NAME = 'Кувекино'; // fallback if gid is unknown/changes
 const BALASHIKHA_GID = 2046207161; // <-- set to the gid of the 3rd sheet
 const BALASHIKHA_SHEET_NAME = 'Балашиха';
+const SOKOLOVO_GID = 1366463015;
+const SOKOLOVO_SHEET_NAME = 'Соколово';
 
 function buildCsvUrls({ gid, sheetName }) {
   const base = `https://docs.google.com/spreadsheets/d/${SHEET_ID}`;
@@ -45,12 +47,17 @@ let visibleRowsKuvekino = 6;
 let allDataBalashikha = [];
 let sheetHeadersBalashikha = [];
 let visibleRowsBalashikha = 6;
+
+let allDataSokolovo = [];
+let sheetHeadersSokolovo = [];
+let visibleRowsSokolovo = 6;
 const rowsPerPage = 6;
 
 const sortState = {
   senkino: { col: null, dir: 'desc' },
   kuvekino: { col: null, dir: 'desc' },
   balashikha: { col: null, dir: 'desc' },
+  sokolovo: { col: null, dir: 'desc' },
 };
 
 function parseAreaToNumber(value) {
@@ -134,6 +141,10 @@ function bindSortDelegation() {
       onSort('senkino', colIndex);
     } else if (header.closest('#lotsKuvekino') || header.closest('#lotsKuvekinoMobile')) {
       onSort('kuvekino', colIndex);
+    } else if (header.closest('#lotsBalashikha') || header.closest('#lotsBalashikhaMobile')) {
+      onSort('balashikha', colIndex);
+    } else if (header.closest('#lotsSokolovo') || header.closest('#lotsSokolovoMobile')) {
+      onSort('sokolovo', colIndex);
     }
   });
 }
@@ -166,6 +177,14 @@ function updateShowMoreButtonBalashikha() {
   if (!btn) return;
 
   const shouldShow = allDataBalashikha.length > visibleRowsBalashikha;
+  btn.classList.toggle('hidden', !shouldShow);
+}
+
+function updateShowMoreButtonSokolovo() {
+  const btn = document.getElementById('showMoreSokolovo');
+  if (!btn) return;
+
+  const shouldShow = allDataSokolovo.length > visibleRowsSokolovo;
   btn.classList.toggle('hidden', !shouldShow);
 }
 
@@ -484,6 +503,47 @@ function renderLotsBalashikhaMobile(data) {
   setupSortableHeaderRow(document.querySelector('#lotsBalashikhaMobile .listLots > div'), 'balashikha', onSort);
 }
 
+function renderLotsSokolovo(data) {
+  const container = document.getElementById('lotsSokolovo');
+  if (!container) return;
+
+  const headerRow = container.querySelector(':scope > div > div');
+  const wrapper = container.querySelector(':scope > div');
+  if (!wrapper) return;
+
+  const visibleData = data.slice(0, visibleRowsSokolovo);
+  const rowsHtml = visibleData.map(createLotsRow).join('');
+
+  if (headerRow) {
+    wrapper.innerHTML = headerRow.outerHTML + rowsHtml;
+  } else {
+    wrapper.innerHTML = rowsHtml;
+  }
+
+  markLotsHeaderRow(wrapper);
+  updateShowMoreButtonSokolovo();
+  setupSortableHeaderRow(document.querySelector('#lotsSokolovo > div > div'), 'sokolovo', onSort);
+}
+
+function renderLotsSokolovoMobile(data) {
+  const container = document.getElementById('lotsSokolovoMobile');
+  if (!container) return;
+
+  const headerRow = container.querySelector(':scope > div > div');
+  const wrapper = container.querySelector(':scope > div');
+  if (!wrapper) return;
+
+  const rowsHtml = data.map((row, idx) => createLotsRowMobile(row, { isLast: idx === data.length - 1 })).join('');
+  if (headerRow) {
+    wrapper.innerHTML = headerRow.outerHTML + rowsHtml;
+  } else {
+    wrapper.innerHTML = rowsHtml;
+  }
+
+  markLotsHeaderRow(wrapper);
+  setupSortableHeaderRow(document.querySelector('#lotsSokolovoMobile .listLots > div'), 'sokolovo', onSort);
+}
+
 function showMoreRows() {
   visibleRows += rowsPerPage;
   renderLotsSenkino(allData);
@@ -499,6 +559,11 @@ function showMoreRowsKuvekino() {
 function showMoreRowsBalashikha() {
   visibleRowsBalashikha += rowsPerPage;
   renderLotsBalashikha(allDataBalashikha);
+}
+
+function showMoreRowsSokolovo() {
+  visibleRowsSokolovo += rowsPerPage;
+  renderLotsSokolovo(allDataSokolovo);
 }
 
 function onSort(tableKey, colIndex) {
@@ -518,6 +583,12 @@ function onSort(tableKey, colIndex) {
     allDataBalashikha = sortLotsData(allDataBalashikha, sortState.balashikha, colIndex);
     renderLotsBalashikha(allDataBalashikha);
     renderLotsBalashikhaMobile(allDataBalashikha);
+    return;
+  }
+  if (tableKey === 'sokolovo') {
+    allDataSokolovo = sortLotsData(allDataSokolovo, sortState.sokolovo, colIndex);
+    renderLotsSokolovo(allDataSokolovo);
+    renderLotsSokolovoMobile(allDataSokolovo);
   }
 }
 
@@ -619,6 +690,44 @@ async function initApp() {
     if (btnB && !btnB.dataset.bound) {
       btnB.dataset.bound = 'true';
       btnB.addEventListener('click', showMoreRowsBalashikha);
+    }
+
+    // Соколово
+    const rawS = await fetchTableData({ gid: SOKOLOVO_GID, sheetName: SOKOLOVO_SHEET_NAME });
+    sheetHeadersSokolovo = rawS.headers || [];
+    {
+      const normalized = (sheetHeadersSokolovo || []).filter((x) => String(x ?? '').trim() !== '');
+      const [h1, h2, h3] = normalized;
+
+      const desktopHeaderRow = document.querySelector('#lotsSokolovo > div > div');
+      if (desktopHeaderRow) {
+        const ps = Array.from(desktopHeaderRow.querySelectorAll('p'));
+        if (ps[0] && h1) ps[0].textContent = h1;
+        if (ps[1] && h2) ps[1].textContent = h2;
+        if (ps[2] && h3) ps[2].textContent = h3;
+      }
+
+      const mobileHeaderRow = document.querySelector('#lotsSokolovoMobile .listLots > div');
+      if (mobileHeaderRow) {
+        const ps = Array.from(mobileHeaderRow.querySelectorAll('p'));
+        if (ps[0] && h1) ps[0].textContent = h1;
+        if (ps[1] && h2) ps[1].textContent = h2;
+        if (ps[2] && h3) ps[2].textContent = h3;
+      }
+    }
+
+    allDataSokolovo = formatTableData(rawS.data || []);
+    visibleRowsSokolovo = 6;
+    renderLotsSokolovo(allDataSokolovo);
+    renderLotsSokolovoMobile(allDataSokolovo);
+
+    setupSortableHeaderRow(document.querySelector('#lotsSokolovo > div > div'), 'sokolovo', onSort);
+    setupSortableHeaderRow(document.querySelector('#lotsSokolovoMobile .listLots > div'), 'sokolovo', onSort);
+
+    const btnS = document.getElementById('showMoreSokolovo');
+    if (btnS && !btnS.dataset.bound) {
+      btnS.dataset.bound = 'true';
+      btnS.addEventListener('click', showMoreRowsSokolovo);
     }
   } catch (error) {}
 }

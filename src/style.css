@@ -150,22 +150,22 @@ h3 {
   background-repeat: no-repeat;
   overflow: hidden;
   &:is(.first) {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_04.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('https://optim.tildacdn.com/tild3435-6635-4634-b565-373564336561/-/resize/660x/-/format/webp/Card_04.jpg.webp');
   }
   &:is(.second) {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_01.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('https://optim.tildacdn.com/tild3863-3534-4462-b032-623562326366/-/resize/660x/-/format/webp/Card_01.jpg.webp');
   }
   &:is(.third) {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_03.png');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('https://optim.tildacdn.com/tild3136-6638-4436-b633-373434653463/-/resize/660x/-/format/webp/Card_03.png.webp');
   }
   &:is(.fourth) {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_02.png');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('https://optim.tildacdn.com/tild3335-3637-4332-b538-333963636234/-/resize/660x/-/format/webp/Card_02.png.webp');
   }
   &:is(.fifth) {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_05.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('https://optim.tildacdn.com/tild3536-3133-4030-a632-623431643664/-/resize/660x/-/format/webp/Card_05.jpg.webp');
   }
   &:is(.sixth) {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_06.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('https://optim.tildacdn.com/tild6561-3036-4435-a334-383563623762/-/resize/660x/-/format/webp/Card_06.jpg.webp');
   }
 }
 
@@ -185,7 +185,7 @@ h3 {
   }
   &:is(.kuvekino) {
     background-color: var(--kuvekino-color);
-    background-image: url('/card/kuvekino.jpg');
+    background-image: url(https://optim.tildacdn.com/tild6663-3335-4437-b235-376639343334/-/resize/660x/-/format/webp/kuvekino.jpg.webp);
     background-size: cover;
     background-position: center;
     .project_color {
@@ -194,7 +194,7 @@ h3 {
   }
   &:is(.senkino) {
     background-color: var(--senkino-color);
-    background-image: url('/card/senkino.jpg');
+    background-image: url(https://optim.tildacdn.com/tild3765-3966-4432-a165-613131316163/-/resize/660x/-/format/webp/senkino.jpg.webp);
     background-size: cover;
     background-position: center;
     .project_color {
@@ -203,7 +203,7 @@ h3 {
   }
   &:is(.balashiha) {
     background-color: var(--balashiha-color);
-    background-image: url('/card/balashiha.jpg');
+    background-image: url(https://optim.tildacdn.com/tild6536-3033-4263-a639-306438313765/-/resize/660x/-/format/webp/balashiha.jpg.webp);
     background-size: cover;
     background-position: center;
     .project_color {
@@ -212,7 +212,7 @@ h3 {
   }
   &:is(.sokolovo) {
     background-color: var(--sokolovo-color);
-    background-image: url('/card/sokolovo.jpg');
+    background-image: url(https://optim.tildacdn.com/tild6638-3536-4566-b930-313465643233/-/resize/660x/-/format/webp/sokolovo.jpg.webp);
     background-size: cover;
     background-position: center;
     .project_color {
@@ -221,7 +221,7 @@ h3 {
   }
   &:is(.tokarevo) {
     background-color: var(--tokarevo-color);
-    background-image: url('/card/tokarevo.jpg');
+    background-image: url(https://optim.tildacdn.com/tild6633-3830-4631-b062-653561363634/-/resize/660x/-/format/webp/tokarevo.jpg.webp);
     background-size: cover;
     background-position: center;
     .project_color {
@@ -230,7 +230,7 @@ h3 {
   }
   &:is(.butovo) {
     background-color: var(--butovo-color);
-    background-image: url('/card/butovo.jpg');
+    background-image: url(https://optim.tildacdn.com/tild6633-6133-4934-b362-376264343162/-/resize/660x/-/format/webp/butovo.jpg.webp);
     background-size: cover;
     background-position: center;
     .project_color {
@@ -244,9 +244,9 @@ h3 {
 }
 
 .main-slider {
-  background-image: url('/MainSliderBG.svg');
+  background-image: url(https://static.tildacdn.com/tild6461-3563-4539-a261-313239393630/MainSliderBG.svg);
   @media screen and (max-width: 768px) {
-    background-image: url('/MainSliderMobileBG.svg');
+    background-image: url(https://static.tildacdn.com/tild6336-6430-4637-b233-353937323832/MainSliderMobileBG.svg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -954,7 +954,7 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
 .openBtn {
   width: 42px;
   aspect-ratio: 1;
-  background-image: url('/icons/chevron-up.svg');
+  background-image: url('https://static.tildacdn.com/tild3363-3531-4533-b436-623739393864/chevron-up.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

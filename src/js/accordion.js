@@ -1,21 +1,18 @@
 /**
- * Flex-box: два независимых набора аккордеонов с одинаковыми id в разметке.
- * — Финансы: первые #secondAccordion / #lastAccordion в документе — простое поведение (как раньше).
- * — Доступные лоты (#Sales): вторые вхождения тех же id + #balashikhaAccordion — логика как в arenda.
+ * Flex-box: два независимых набора аккордеонов.
+ * — Финансы: первые #secondAccordion / #lastAccordion в документе — простое поведение.
+ * — Доступные лоты (#Sales): #lastAccordion (вторая копия id), #balashikhaAccordion, #sokolovoAccordion.
  */
 document.addEventListener('DOMContentLoaded', () => {
   const dupSecond = document.querySelectorAll('[id="secondAccordion"]');
   const dupLast = document.querySelectorAll('[id="lastAccordion"]');
   const balashikhaAccordion = document.getElementById('balashikhaAccordion');
+  const sokolovoAccordion = document.getElementById('sokolovoAccordion');
 
   const financeAccordions = [dupSecond[0], dupLast[0]].filter(Boolean);
-  const salesAccordions = [dupSecond[1], dupLast[1], balashikhaAccordion].filter(Boolean);
+  const salesAccordions = [dupLast[1], balashikhaAccordion, sokolovoAccordion].filter(Boolean);
 
   const mobileTriggers = [
-    {
-      trigger: document.getElementById('accordionCardMobileSenkino'),
-      acc: dupSecond[1] || null,
-    },
     {
       trigger: document.getElementById('accordionCardMobileKuvekino'),
       acc: dupLast[1] || null,
@@ -24,14 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
       trigger: document.getElementById('accordionCardMobileBalashikha'),
       acc: balashikhaAccordion,
     },
+    {
+      trigger: document.getElementById('accordionCardMobileSokolovo'),
+      acc: sokolovoAccordion,
+    },
   ];
 
   const listSenkino = document.getElementById('listSenkino');
   const listKuvekino = document.getElementById('listKuvekino');
   const listBalashikha = document.getElementById('listBalashikha');
+  const listSokolovo = document.getElementById('listSokolovo');
   const closeListSenk = document.getElementById('closeListSenk');
   const closeListKuv = document.getElementById('closeListKuv');
   const closeListBal = document.getElementById('closeListBal');
+  const closeListSok = document.getElementById('closeListSok');
 
   closeListSenk?.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -48,10 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
     listBalashikha?.classList.add('hidden');
   });
 
+  closeListSok?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    listSokolovo?.classList.add('hidden');
+  });
+
   function hideLists() {
     listSenkino?.classList.add('hidden');
     listKuvekino?.classList.add('hidden');
     listBalashikha?.classList.add('hidden');
+    listSokolovo?.classList.add('hidden');
   }
 
   function isSalesAccordion(acc) {
@@ -68,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (acc.id === 'secondAccordion') listSenkino?.classList.remove('hidden');
     if (acc.id === 'lastAccordion') listKuvekino?.classList.remove('hidden');
     if (acc.id === 'balashikhaAccordion') listBalashikha?.classList.remove('hidden');
+    if (acc.id === 'sokolovoAccordion') listSokolovo?.classList.remove('hidden');
   }
 
   function getAvailableHeightPx(card) {
