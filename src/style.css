@@ -39,6 +39,33 @@
   --grey: #d6d6d6;
 }
 
+:root {
+  --black: #000000;
+  --pikBlack: #181818;
+  --white: #ffffff;
+
+  --lightGrey: #f7f7f7;
+  --grey: #888888;
+
+  /* stroke */
+  --stroke-light: #dddddd;
+  --stroke-dark: #3a3a3a;
+
+  /* park */
+  --senkino-color: #9ca8af;
+  --balashiha-color: #4f98a3;
+  --kuvekino-color: #bdb7aa;
+  --sokolovo-color: #a65b61;
+  --tokarevo-color: #8a7f8e;
+  --butovo-color: #949e8c;
+
+  /* переменные Матвея */
+  --color-primary: #000;
+  --secondary-light: #f7f7f7;
+
+  --parametr-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 body {
   width: 100%;
   height: fit-content;
@@ -921,7 +948,7 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
 .divGrey {
   width: 100%;
   height: 1px;
-  background-color: var(--grey);
+  background-color: var(--stroke-light);
 }
 
 .openBtn {
@@ -982,4 +1009,38 @@ body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
 
 .accordionCard.is-open {
   opacity: 1;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centeredHor {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.loti_fotka {
+  background-image: url('https://optim.tildacdn.com/tild3430-3565-4039-b930-633939373537/-/format/webp/flex_loti.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+
+@media (max-width: 768px) {
+.loti_fotka {
+  background-image: url('https://optim.tildacdn.com/tild3764-6630-4665-b366-393865373235/-/format/webp/flex_loti_mobile.jpg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
 }
