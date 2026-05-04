@@ -1,10 +1,32 @@
 * {
+  box-sizing: border-box !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   margin: 0;
   box-sizing: border-box;
-  font-family: "TT Firs Neue", sans-serif;
+  font-family: 'TT Firs Neue', sans-serif;
 }
 
-@import "tailwindcss";
+@font-face {
+  font-family: TT Firs Neue;
+  src:
+    url(/parametr-header/TTFirsNeue-Regular.ttf) format('truetype'),
+    url(https://static.tildacdn.com/tild3761-6331-4234-b039-346630363437/TTFirsNeue-Regular.woff);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: TT Firs Neue;
+  src:
+    url(/parametr-header/TTFirsNeue-Medium.ttf) format('truetype'),
+    url(https://static.tildacdn.com/tild3038-3936-4734-a664-643863393164/TTFirsNeue-Medium.woff);
+  font-weight: 500;
+  font-style: normal;
+}
+
+@import 'tailwindcss';
 
 :root {
   --color-primary: #000;
@@ -105,52 +127,22 @@ h3 {
   background-repeat: no-repeat;
   overflow: hidden;
   &:is(.first) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_04.jpg");
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_04.jpg');
   }
   &:is(.second) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_01.jpg");
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_01.jpg');
   }
   &:is(.third) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_03.png");
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_03.png');
   }
   &:is(.fourth) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_02.png");
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_02.png');
   }
   &:is(.fifth) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_05.jpg");
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_05.jpg');
   }
   &:is(.sixth) {
-    background-image: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 40%,
-        rgba(0, 0, 0, 1) 100%
-      ),
-      url("/card/Card_06.jpg");
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 1) 100%), url('/card/Card_06.jpg');
   }
 }
 
@@ -170,7 +162,7 @@ h3 {
   }
   &:is(.kuvekino) {
     background-color: var(--kuvekino-color);
-    background-image: url("/card/kuvekino.jpg");
+    background-image: url('/card/kuvekino.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -179,7 +171,7 @@ h3 {
   }
   &:is(.senkino) {
     background-color: var(--senkino-color);
-    background-image: url("/card/senkino.jpg");
+    background-image: url('/card/senkino.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -188,7 +180,7 @@ h3 {
   }
   &:is(.balashiha) {
     background-color: var(--balashiha-color);
-    background-image: url("/card/balashiha.jpg");
+    background-image: url('/card/balashiha.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -197,7 +189,7 @@ h3 {
   }
   &:is(.sokolovo) {
     background-color: var(--sokolovo-color);
-    background-image: url("/card/sokolovo.jpg");
+    background-image: url('/card/sokolovo.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -206,7 +198,7 @@ h3 {
   }
   &:is(.tokarevo) {
     background-color: var(--tokarevo-color);
-    background-image: url("/card/tokarevo.jpg");
+    background-image: url('/card/tokarevo.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -215,7 +207,7 @@ h3 {
   }
   &:is(.butovo) {
     background-color: var(--butovo-color);
-    background-image: url("/card/butovo.jpg");
+    background-image: url('/card/butovo.jpg');
     background-size: cover;
     background-position: center;
     .project_color {
@@ -229,9 +221,9 @@ h3 {
 }
 
 .main-slider {
-  background-image: url("/MainSliderBG.svg");
+  background-image: url('/MainSliderBG.svg');
   @media screen and (max-width: 768px) {
-    background-image: url("/MainSliderMobileBG.svg");
+    background-image: url('/MainSliderMobileBG.svg');
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -300,11 +292,11 @@ h3 {
   }
 
   /* Добавить активное состояние по клику - скрываем карточку */
-  .feature.group.active > div[class*="-translate-y-"] {
+  .feature.group.active > div[class*='-translate-y-'] {
     transform: translateY(-100px) !important;
   }
 
-  .feature.group.active p[class*="opacity-0"] {
+  .feature.group.active p[class*='opacity-0'] {
     opacity: 1 !important; /* Текст становится видимым при активном состоянии */
   }
 
@@ -323,11 +315,11 @@ body.mobile-no-hover .feature.group:hover p {
   opacity: inherit !important;
 }
 
-body.mobile-no-hover .feature.group.active > div[class*="-translate-y-"] {
+body.mobile-no-hover .feature.group.active > div[class*='-translate-y-'] {
   transform: translateY(-100px) !important;
 }
 
-body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
+body.mobile-no-hover .feature.group.active p[class*='opacity-0'] {
   opacity: 1 !important; /* Текст становится видимым при активном состоянии */
 }
 
@@ -385,7 +377,7 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
 }
 
 .custom-form__checkbox-input:checked ~ .custom-form__checkbox-icon::after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 2px;
@@ -939,7 +931,7 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
 .openBtn {
   width: 42px;
   aspect-ratio: 1;
-  background-image: url("/icons/chevron-up.svg");
+  background-image: url('/icons/chevron-up.svg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -987,7 +979,9 @@ body.mobile-no-hover .feature.group.active p[class*="opacity-0"] {
   max-height: 0;
   opacity: 0;
 
-  transition: max-height 0.5s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.3s ease;
 }
 
 .accordionCard.is-open {
